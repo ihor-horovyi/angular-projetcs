@@ -1,0 +1,21 @@
+<div class="search__block">
+  <div class="search__input">
+    <h1>Start type github user name</h1>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Start type user name"
+        [(ngModel)]="searchStr"
+        (ngModelChange)="handleChange()"
+        [minlength]="minLength"
+        value="ihor-horovyi"
+      >
+      <mat-error>
+        Min length is {{ minLength }}. Now it is {{ searchStr.length }}
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <app-user-card *ngIf="isLoaded" [user]="user"></app-user-card>
+
+</div>
